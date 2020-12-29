@@ -5,7 +5,7 @@
       <em @click="logout">{{ $t('Logout') }}</em>
     </div>
    <div class="board">
-     <h1>{{$t('Welcome')}}, {{username}}</h1>
+     <h1>{{$t('Welcome')}}, {{username}}!</h1>
      <Board></Board>
    </div>
   </div>

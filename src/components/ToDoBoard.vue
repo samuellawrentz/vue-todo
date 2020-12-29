@@ -67,6 +67,7 @@ created(){
     max-width: 350px;
     width: 100%;
     height: 40px;
+    color: var(--contrast-color);
     font-size: 20px;
     background: transparent;
     border: 1px solid var(--contrast-color);
