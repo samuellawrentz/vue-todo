@@ -17,7 +17,11 @@ const i18nHelper = new VueI18n({
         "Password": 'Password',
         "Question": "What you wanna do?",
         "Logout": "Logout",
-        "Dark": "Enable Dark Mode"
+        "Dark": "Enable Dark Mode",
+        "Started": "Welcome, let's get started!",
+        "Name": "Your Name",
+        "Create Account": "Create Account",
+        "Desc": "Please enter the following details for account creation"
 
       },
       "ta": {
@@ -29,7 +33,11 @@ const i18nHelper = new VueI18n({
         "Password": 'தங்களது கடவுச்சொல்',
         "Question": "ஏதாவது உள்ளிடவும்..",
         "Logout": "வெளியேறு",
-        "Dark": "கண் வலி?"
+        "Dark": "கண் வலியா?",
+        "Started": "வாருங்கள், ஆரம்பிக்கலாம்!",
+        "Name": "உங்கள் பெயர்",
+        "Create Account": "உங்கள் கணக்கை துவங்குங்கள்",
+        "Desc": "கணக்கு உருவாக்க பின்வரும் விவரங்களை உள்ளிடவும்"
       }
     }
   })

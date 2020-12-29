@@ -4,8 +4,13 @@
             <input type="text" @keypress.enter="add" :placeholder="$t('Question')" v-model="toDoItem" id="todoinput">
         <span @click=add id="add">+</span>
         </div>
-        <div class="list">
-            <div class="list-item" v-for="(item, index) in list" :key="item.id">
+        <div class="toggles" v-if="list.length">
+            <span @click="filter = 'all'" :class="{selected: filter === 'all'}">All</span>
+            <span @click="filter = 'todo'" :class="{selected: filter === 'todo'}" v-if="(list.filter(item => !item.completed)).length">ToDo</span>
+            <span @click="filter = 'done'" :class="{selected: filter === 'done'}" v-if="(list.filter(item => item.completed)).length">Done</span>
+        </div>
+        <div class="list" :class="filter">
+            <div class="list-item" v-for="(item, index) in list" :key="item.id" :class="{done: item.completed}">
                 <div class="text">
                     <span :class="{active: item.completed}"><input type="checkbox" name="completed" :id="'item_' + Math.floor(item.id)" v-model="item.completed" class="completed-check"><label :for="'item_'+Math.floor(item.id)">{{item.value}}</label></span>
                 </div>
@@ -22,6 +27,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 export default class Board extends Vue {
     private list = [];
     private toDoItem = '';
+    private filter = 'all';
 
 created(){
     this.$store.commit('loadItems');
@@ -51,7 +57,33 @@ created(){
 </script>
 <style lang="scss">
 .list{
-    padding: 1rem;
+    padding: 0 1rem;
+}
+.toggles{
+    display: flex;
+    padding: 0 1rem;
+    margin-top: 4rem;
+    width: 250px;
+    span{
+    padding: 4px 10px;
+    border: 1px solid var(--contrast-color);
+    margin-right: 16px;
+    cursor: pointer;
+    min-width: 50px;
+    border-radius: 35px;
+    &.selected{
+            background-color: var(--contrast-color);
+            color: var(--base-color);
+    }
+    }
+}
+
+.list.todo > .done{
+    display: none;
+}
+
+.list.done > *:not(.done){
+    display: none;
 }
 .list-item{
     display: flex;
@@ -88,6 +120,8 @@ created(){
 }
 .remove{
     cursor: pointer;
+    transform: scaleX(1.2);
+    font-weight: 500;
 }
 #add{
         position: absolute;

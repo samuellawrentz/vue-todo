@@ -3,21 +3,21 @@
 	<div class="wrapper">
 		<div class="card">
 			<div class="title">
-				<h1 class="title title-large">Welcome, let's get started</h1>
-				<p class="title title-subs">Please enter the following details for account creation</p>
+				<h1 class="title title-large">{{ $t('Started') }}</h1>
+				<p class="title title-subs">{{ $t('Desc') }}</p>
 			</div>
 			<form class="form" @submit.prevent="signup">
                 <div class="form-group">
-					<input type="text" name="name" id="name" class="input-field" placeholder="Your name" required v-model="name">
+					<input type="text" name="name" id="name" class="input-field" :placeholder="$t('Name')" required v-model="name">
 				</div>
 				<div class="form-group">
-					<input type="email" name="email" id="email" class="input-field" placeholder="Email address" required v-model="username">
+					<input type="email" name="email" id="email" class="input-field" :placeholder="$t('Email')" required v-model="username">
 				</div>
 				<div class="form-group">
-					<input type="password" name="password" id="password" class="input-field" placeholder="Password" required v-model="password">
+					<input type="password" name="password" id="password" class="input-field" :placeholder="$t('Password')" required v-model="password">
 				</div>
 				<div class="form-group">
-					<input type="submit" name="submit" class="input-submit" value="Create Account">
+					<input type="submit" name="submit" class="input-submit" :value="$t('Create Account')">
 				</div>
 			</form>
 		</div>
