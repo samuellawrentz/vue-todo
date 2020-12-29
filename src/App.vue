@@ -71,7 +71,7 @@ body{
 }
 
 .loc-toggle{
-    right: 6rem;
+    right: 7rem;
     position: absolute;
     top: 1.5rem;
     cursor: pointer;
