@@ -55,6 +55,12 @@ body{
 #app.dark{
     --base-color: #171b1f;
     --contrast-color: #fff;
+    .card{
+    background: #2c2c2c;
+    .title{
+      color: var(--contrast-color);
+    }
+    }
 }
 
 #nav {
