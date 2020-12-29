@@ -71,10 +71,10 @@ body{
 }
 
 .loc-toggle{
-  right: 3rem;
-  position: absolute;
-  top: 2rem;
-  cursor: pointer;
+    right: 6rem;
+    position: absolute;
+    top: 1.5rem;
+    cursor: pointer;
 }
 
 /*slider switch css */
