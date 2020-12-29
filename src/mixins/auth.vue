@@ -1,4 +1,5 @@
 <script>
+// Global Authentication Mixin
 import store from '../store/index';
 import router from '../router/index';
 
@@ -7,7 +8,7 @@ import router from '../router/index';
 const authMixin = {
     data(){
         return{
-            isError: false
+            isError: false // to show the error when password is wrong
         }
     },
   methods: {

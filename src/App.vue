@@ -22,6 +22,7 @@ export default {
   },
   data(){
     return{
+      // theme is toggled using CSS
        themeToggle: false,
     }
   },

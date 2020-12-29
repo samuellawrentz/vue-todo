@@ -16,6 +16,7 @@
 </template>
 
 <script lang="ts">
+// Main todo component
 import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class Board extends Vue {
@@ -26,16 +27,22 @@ created(){
     this.$store.commit('loadItems');
     this.list = this.$store.state.list
 }
+    // Add item to list
     add(){
         this.toDoItem && this.$store.commit('addItem', {id: Math.floor(Math.random() * 100), value: this.toDoItem, completed: false});
         this.toDoItem = '';
     }
+
+    // Remove item from list
     remove(index: number){
         this.$store.commit('removeItem', index);
     }
+
+    // Mark task as completed
     completeTask(item: any){
         item.completed = true;
     }
+    // Save the status of the list before destroying
     beforeDestroy(){
         this.$store.commit('updateItems');
     }

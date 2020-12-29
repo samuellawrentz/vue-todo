@@ -19,6 +19,7 @@ export default new Vuex.Store({
     locale: 'en'
   },
   mutations: {
+    // load saved items from local storage
     loadItems(state){
       state.list = [];
       const storedItems = JSON.parse(localStorage.getItem(state.userId) || '{}').list
@@ -26,25 +27,36 @@ export default new Vuex.Store({
         state.list.push(element);
       });
     },
+    // Save the current status of the list items
     updateItems(state){
       updateStorage(state);
     },
+
+    // Add an item to list
     addItem(state, item){
       state.list.push(item);
       updateStorage(state);
     },
+
+    // Remove an item from list
     removeItem(state, index){
       state.list.splice(index, 1);
       updateStorage(state);
     },
+
+    // Handle authentication
     setAuth(state, userDetails){
       state.isAuthenticated = userDetails.auth;
       state.username = userDetails.name;
       state.userId = userDetails.username;
     },
+
+    // Clear authenctication while logging out
     removeAuth(state){
       state.isAuthenticated = false;
     },
+
+    // Update locale
     updateLocale(state, locale){
       state.locale = locale
     }
