@@ -1,13 +1,13 @@
 <template>
   <div class="home">
     <div class="logout">
-      <Toggle></Toggle>
       <em @click="logout">{{ $t('Logout') }}</em>
     </div>
    <div class="board">
      <h1>{{$t('Welcome')}}, {{username}}!</h1>
      <Board></Board>
    </div>
+   <Toggle></Toggle>
   </div>
 </template>
 

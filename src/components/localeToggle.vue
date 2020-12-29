@@ -1,5 +1,7 @@
 <template>
-    <em style="font-size: 12px; margin-right: 1rem">Language: <span @click="updateLocale('en')">English</span> | <span @click="updateLocale('ta')">தமிழ்</span></em>
+    <div class="loc-toggle">
+        <em style="font-size: 12px; margin-right: 1rem">Language: <span @click="updateLocale('en')">English</span> | <span @click="updateLocale('ta')">தமிழ்</span></em>
+    </div>
 </template>
 
 <script lang="ts">

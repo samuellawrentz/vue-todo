@@ -7,7 +7,7 @@
   </label>
     <em>{{ $t('Dark') }}</em>
   </div>
-  <div class="logout" v-if="!isAuth">
+  <div v-if="!isAuth">
     <Toggle></Toggle>
   </div>
     <router-view/>
@@ -40,9 +40,10 @@ body{
 #app {
   --base-color: #fff;
   --contrast-color: #333;
+  position: relative;
   margin: 0;
-  height: 100vh;
-  padding-top: 3rem;
+  min-height: 95vh;
+  padding: 3rem 0;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -67,6 +68,13 @@ body{
       color: var(--contrast-color);
     }
   }
+}
+
+.loc-toggle{
+  right: 3rem;
+  position: absolute;
+  top: 2rem;
+  cursor: pointer;
 }
 
 /*slider switch css */
@@ -142,6 +150,11 @@ input:checked + .slider:before {
   }
   .theme-switch-wrapper {
 left: 10px
+  }
+  .loc-toggle{
+    right: 0;
+    bottom: 0;
+    top: auto;
   }
    .logout{
      right: 10px;
