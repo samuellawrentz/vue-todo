@@ -4,7 +4,7 @@
 		<div class="card">
 			<div class="title">
 				<h1 class="title title-large">{{ $t('Sign In') }}</h1>
-				<p class="title title-subs">{{ $t('New User') }} <span><a href="/signup" class="linktext">{{ $t('New Account') }}</a></span></p>
+				<p class="title title-subs">{{ $t('New User') }} <span><router-link to="/signup"><a class="linktext">{{ $t('New Account') }}</a></router-link></span></p>
 			</div>
 			<form class="form" @submit.prevent="login">
 				<div class="form-group">

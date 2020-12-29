@@ -33,7 +33,6 @@ const routes: Array<RouteConfig> = [
 
 // Set up and export the router
 const router = new VueRouter({
-  mode: 'history',
   base: '/vue-todo/',
   routes
 })
